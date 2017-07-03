@@ -9767,25 +9767,13 @@ var _reactDom = __webpack_require__(98);
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
-var _HelloWorld = __webpack_require__(184);
+var _Demo = __webpack_require__(184);
 
-var _HelloWorld2 = _interopRequireDefault(_HelloWorld);
+var _Demo2 = _interopRequireDefault(_Demo);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-_reactDom2.default.render(_react2.default.createElement(_HelloWorld2.default, null), document.getElementById('root'));
-
-/*
-import React from 'react'; 
-import ReactDOM from 'react-dom'; 
-
-class HelloWorld extends React.Component { 
-  render() {
-    return ( Hello, React! ) 
-  } 
-};
-ReactDOM.render(<HelloWorld />, document.getElementById('root'));
-*/
+_reactDom2.default.render(_react2.default.createElement(_Demo2.default, null), document.getElementById('root'));
 
 /***/ }),
 /* 83 */
@@ -22421,7 +22409,7 @@ module.exports = ReactDOMInvalidARIAHook;
 
 
 Object.defineProperty(exports, "__esModule", {
-   value: true
+	value: true
 });
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -22438,44 +22426,55 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var HelloWorld = function (_React$Component) {
-   _inherits(HelloWorld, _React$Component);
+var Demo2 = function (_React$Component) {
+	_inherits(Demo2, _React$Component);
 
-   function HelloWorld() {
-      _classCallCheck(this, HelloWorld);
+	function Demo2() {
+		_classCallCheck(this, Demo2);
 
-      return _possibleConstructorReturn(this, (HelloWorld.__proto__ || Object.getPrototypeOf(HelloWorld)).apply(this, arguments));
-   }
+		var _this = _possibleConstructorReturn(this, (Demo2.__proto__ || Object.getPrototypeOf(Demo2)).call(this));
 
-   _createClass(HelloWorld, [{
-      key: 'render',
-      value: function render() {
-         return _react2.default.createElement(
-            'div',
-            null,
-            _react2.default.createElement(
-               'h1',
-               null,
-               'Heading 1'
-            ),
-            _react2.default.createElement(
-               'h2',
-               null,
-               'Heading 2'
-            ),
-            _react2.default.createElement(
-               'p',
-               null,
-               'Hello Ma May Thet'
-            )
-         );
-      }
-   }]);
+		_this.state = {
+			data: []
+		};
 
-   return HelloWorld;
+		_this.setStateHandler = _this.setStateHandler.bind(_this);
+		return _this;
+	}
+
+	_createClass(Demo2, [{
+		key: "setStateHandler",
+		value: function setStateHandler() {
+			var myItemArray = this.state.data;
+			var item = "item" + myItemArray.length + ",   ";
+			myItemArray.push(item);
+			this.setState({ data: myItemArray });
+		}
+	}, {
+		key: "render",
+		value: function render() {
+			return _react2.default.createElement(
+				"div",
+				null,
+				_react2.default.createElement(
+					"button",
+					{ onClick: this.setStateHandler },
+					"Add Item"
+				),
+				_react2.default.createElement(
+					"h4",
+					null,
+					"Item List : ",
+					this.state.data
+				)
+			);
+		}
+	}]);
+
+	return Demo2;
 }(_react2.default.Component);
 
-exports.default = HelloWorld;
+exports.default = Demo2;
 
 /***/ })
 /******/ ]);
