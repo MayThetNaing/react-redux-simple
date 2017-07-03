@@ -1,7 +1,7 @@
 import React from 'react';
 
 /*
- * "Demo1" class with state data.
+ * "Demo1" class with state/props data.
  */
 class Demo1 extends React.Component {
 
