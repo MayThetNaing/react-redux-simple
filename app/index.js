@@ -6,6 +6,11 @@ import Demo2 from './Demo2.jsx';
 ReactDOM.render(<Demo2 />, document.getElementById('root'));
 */
 
+/*
+ * 'store' is the place that holds the app's state.
+ * 'Provider' use to wrapped around the component tree
+ */
+
 import React from 'react'
 import { render } from 'react-dom'
 import { createStore } from 'redux'

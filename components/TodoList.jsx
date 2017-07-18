@@ -8,7 +8,7 @@ export default class TodoList extends Component {
         {this.props.todos.map(
           todo => <Todo
             key = {todo.id}
-            {...todo}
+            {...todo} //... as a "spread" operator to pass the whole todo object.
           />
         )}
       </ul>
